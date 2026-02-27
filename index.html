@@ -52,7 +52,7 @@
             letter-spacing: 1px;
         }
 
-        /* GRID: 1 column on mobile, up to 3 on desktop */
+        /* Responsive Grid: 1 column on mobile, 2 on tablet, 3 on laptop */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -79,29 +79,29 @@
             overflow: hidden;
         }
 
-        /* IMAGE: Portrait friendly but restricted so it doesn't get too long */
+        /* Image box: Uniform height, fits portrait images */
         .img-box { 
             aspect-ratio: 4/5; 
-            max-height: 70vh;
+            max-height: 75vh;
         }
         
-        /* VIDEO: Widescreen friendly but handles vertical video without zooming */
+        /* Video box: Widescreen, handles vertical video without cropping */
         .vid-box { 
             aspect-ratio: 16/9; 
-            max-height: 70vh;
+            max-height: 75vh;
         }
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Images stay full-bleed */
+            object-fit: cover; /* Keeps the gallery looking uniform */
             display: block;
         }
 
         video {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* FIXED: Handles vertical video without zooming */
+            object-fit: contain; /* Prevents vertical videos from being zoomed */
             display: block;
         }
 
@@ -111,11 +111,6 @@
             border-top: 1px solid var(--border);
             font-size: 0.8rem;
             color: var(--text-dim);
-        }
-
-        /* Responsive Fix for Desktop */
-        @media (min-width: 1024px) {
-            .grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -130,58 +125,18 @@
         
         <h2 class="section-title">Event Photos</h2>
         <div class="grid">
-            <div class="card">
-                <div class="media-box img-box">
-                    <img src="./img1.jpg">
-                </div>
-            </div>
-            <div class="card">
-                <div class="media-box img-box">
-                    <img src="./img2.jpg">
-                </div>
-            </div>
-            <div class="card">
-                <div class="media-box img-box">
-                    <img src="./img3.jpg">
-                </div>
-            </div>
+            <div class="card"><div class="media-box img-box"><img src="./img1.jpg"></div></div>
+            <div class="card"><div class="media-box img-box"><img src="./img2.jpg"></div></div>
+            <div class="card"><div class="media-box img-box"><img src="./img3.jpg"></div></div>
+            <div class="card"><div class="media-box img-box"><img src="./img4.jpg"></div></div>
+            <div class="card"><div class="media-box img-box"><img src="./img5.jpg"></div></div>
         </div>
-        <div class="card">
-                <div class="media-box img-box">
-                    <img src="./img4.jpg">
-                </div>
-            </div>
-        <div class="card">
-                <div class="media-box img-box">
-                    <img src="./img5.jpg">
-                </div>
-            </div>
 
         <h2 class="section-title">Video Showcase</h2>
         <div class="grid">
-            <div class="card">
-                <div class="media-box vid-box">
-                    <video controls preload="metadata">
-                        <source src="./vid1.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="media-box vid-box">
-                    <video controls preload="metadata">
-                        <source src="./vid2.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="media-box vid-box">
-                    <video controls preload="metadata">
-                        <source src="./vid3.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
+            <div class="card"><div class="media-box vid-box"><video controls preload="metadata"><source src="./vid1.mp4" type="video/mp4"></video></div></div>
+            <div class="card"><div class="media-box vid-box"><video controls preload="metadata"><source src="./vid2.mp4" type="video/mp4"></video></div></div>
+            <div class="card"><div class="media-box vid-box"><video controls preload="metadata"><source src="./vid3.mp4" type="video/mp4"></video></div></div>
         </div>
 
     </div>
