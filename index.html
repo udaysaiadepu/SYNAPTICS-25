@@ -13,7 +13,6 @@
             --accent-glow: rgba(56, 189, 248, 0.3);
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
-            --gold: #f59e0b;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
         }
@@ -22,7 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
         }
 
         body {
@@ -32,9 +31,8 @@
             overflow-x: hidden;
         }
 
-        /* HERO SECTION - Responsive Height */
         header {
-            min-height: 80vh;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,8 +40,7 @@
             text-align: center;
             padding: 20px;
             background: radial-gradient(circle at top right, var(--accent-glow), transparent),
-                        linear-gradient(to bottom, rgba(2, 6, 23, 0.8), var(--primary)),
-                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070') center/cover;
+                        linear-gradient(to bottom, rgba(2, 6, 23, 0.9), var(--primary));
         }
 
         .logo-text {
@@ -61,10 +58,8 @@
             font-size: clamp(1rem, 4vw, 1.25rem);
             color: var(--text-dim);
             max-width: 700px;
-            margin-bottom: 30px;
         }
 
-        /* LAYOUT CONTAINER */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -72,7 +67,7 @@
         }
 
         .section-title {
-            margin: 80px 0 30px;
+            margin: 60px 0 30px;
             font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 800;
             display: flex;
@@ -85,10 +80,9 @@
             height: 2px;
             background: var(--accent);
             flex-grow: 1;
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
-        /* MEDIA GRID - Auto Aligned */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,20 +94,18 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
         }
 
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .media-box {
             width: 100%;
             aspect-ratio: 16/9;
             background: #000;
-            position: relative;
         }
 
         img, video {
@@ -122,101 +114,22 @@
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            color: var(--accent);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .card-content p {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
-
-        /* SPONSORSHIP TABLE - Responsive Scroll */
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            background: var(--secondary);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            -webkit-overflow-scrolling: touch;
-        }
-
-        table {
-            width: 100%;
-            min-width: 600px; /* Force scroll on tiny screens to keep data readable */
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            background: rgba(56, 189, 248, 0.05);
-            color: var(--accent);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* MISSION SECTION */
         .mission-box {
             text-align: center;
             padding: 60px 20px;
             background: linear-gradient(to bottom, var(--secondary), transparent);
             border-radius: 30px;
-            margin: 80px 0;
+            margin: 40px 0;
         }
 
         .mission-text {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-style: italic;
             color: var(--text-main);
             max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
+            margin: 0 auto;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .stat-item h4 { font-size: 2rem; color: var(--accent); }
-        .stat-item p { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
-
-        /* BUTTONS */
-        .cta-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .btn {
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .btn-main { background: var(--accent); color: var(--primary); width: clamp(200px, 40vw, 300px); }
-        .btn-side { border: 1px solid var(--accent); color: var(--accent); width: clamp(200px, 40vw, 300px); }
-
-        /* FOOTER */
         footer {
             padding: 60px 20px;
             border-top: 1px solid var(--border);
@@ -225,11 +138,8 @@
             font-size: 0.9rem;
         }
 
-        /* MOBILE OPTIMIZATIONS */
         @media (max-width: 768px) {
-            header { height: auto; padding: 100px 20px; }
-            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
-            .btn { width: 100%; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -237,113 +147,40 @@
 
     <header>
         <div class="logo-text">Synaptics 2K25</div>
-        <p class="tagline">The Convergence of Intelligence and Engineering. A Premier Technical Symposium by JNTUH UCES.</p>
+        <p class="tagline">Official Retrospective | Department of ECE, JNTUH UCES</p>
     </header>
 
     <div class="container">
         
         <section class="mission-box">
             <p class="mission-text">
-                "To bridge the gap between theoretical academia and industrial application by fostering a culture of 
-                hands-on innovation in IoT, Embedded Systems, and VLSI."
+                "Fostering a culture of hands-on innovation in IoT, Embedded Systems, and VLSI."
             </p>
-            <div class="stats-grid">
-                <div class="stat-item"><h4>500+</h4><p>Attendees</p></div>
-                <div class="stat-item"><h4>50+</h4><p>Projects</p></div>
-                <div class="stat-item"><h4>15+</h4><p>Events</p></div>
-            </div>
         </section>
 
-        <h2 class="section-title">Last Year Highlights</h2>
+        <h2 class="section-title">Event Highlights</h2>
         <div class="grid">
-            <div class="card">
-                <div class="media-box">
-                    <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=2070" alt="Inauguration">
-                </div>
-                <div class="card-content">
-                    <h3>Technical Symposium</h3>
-                    <p>Reliving the energy of the keynote sessions and the grand opening ceremony.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="media-box">
-                    <video controls poster="https://via.placeholder.com/600x400/0f172a/38bdf8?text=Watch+Highlights">
-                        <source src="highlights.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="card-content">
-                    <h3>Official Aftermovie</h3>
-                    <p>A cinematic journey through the 2-day tech extravaganza.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="media-box">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069" alt="Expo">
-                </div>
-                <div class="card-content">
-                    <h3>Project Exhibition</h3>
-                    <p>Innovative prototypes from IoT Hub members showcased to industry veterans.</p>
-                </div>
-            </div>
-        </div>
+            <div class="card"><div class="media-box"><img src="img1" alt="Highlight 1"></div></div>
+            <div class="card"><div class="media-box"><img src="img2" alt="Highlight 2"></div></div>
+            <div class="card"><div class="media-box"><img src="img3" alt="Highlight 3"></div></div>
+            <div class="card"><div class="media-box"><img src="img4" alt="Highlight 4"></div></div>
 
-        <h2 class="section-title">Sponsorship Tiers</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Deliverables</th>
-                        <th style="color:#e2e8f0">Platinum</th>
-                        <th style="color:var(--gold)">Gold</th>
-                        <th style="color:#94a3b8">Silver</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Branding on All Promo Media</td>
-                        <td>✓ Premium</td>
-                        <td>✓ Standard</td>
-                        <td>✓ Logo Only</td>
-                    </tr>
-                    <tr>
-                        <td>Product Demo Slot</td>
-                        <td>20 Mins</td>
-                        <td>10 Mins</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>Student Database Access</td>
-                        <td>Full Access</td>
-                        <td>Partial</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>VIP Invites for Ceremony</td>
-                        <td>4 Tickets</td>
-                        <td>2 Tickets</td>
-                        <td>—</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="cta-group">
-            <a href="proposal.pdf" class="btn btn-main">Download PDF Proposal</a>
-            <a href="mailto:organizer@jntuhuces.ac.in" class="btn btn-side">Contact Committee</a>
+            <div class="card"><div class="media-box"><video controls><source src="vid1" type="video/mp4"></video></div></div>
+            <div class="card"><div class="media-box"><video controls><source src="vid2" type="video/mp4"></video></div></div>
+            <div class="card"><div class="media-box"><video controls><source src="vid3" type="video/mp4"></video></div></div>
+            <div class="card"><div class="media-box"><video controls><source src="vid4" type="video/mp4"></video></div></div>
         </div>
 
     </div>
 
     <footer>
-        <p><strong>Department of ECE</strong></p>
+        <p><strong>Synaptics 2K25</strong></p>
         <p>JNTUH University College of Engineering Sultanpur</p>
-        <p style="margin-top: 10px; opacity: 0.6;">&copy; 2026 Synaptics Organizing Team</p>
     </footer>
 
     <script>
-        // Smooth scroll animations
         document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.card, .table-wrapper, .mission-box');
+            const items = document.querySelectorAll('.card');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -351,12 +188,12 @@
                         entry.target.style.transform = "translateY(0)";
                     }
                 });
-            }, { threshold: 0.1 });
+            });
 
             items.forEach(item => {
                 item.style.opacity = "0";
-                item.style.transform = "translateY(40px)";
-                item.style.transition = "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+                item.style.transform = "translateY(30px)";
+                item.style.transition = "all 0.6s ease-out";
                 observer.observe(item);
             });
         });
