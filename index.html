@@ -24,7 +24,7 @@
         }
 
         header {
-            min-height: 30vh;
+            min-height: 25vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,6 +40,7 @@
             background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
@@ -51,14 +52,11 @@
             padding-left: 15px;
         }
 
+        /* Responsive Grid: Stacks on mobile, side-by-side on tablet/desktop */
         .grid {
             display: grid;
-            grid-template-columns: 1fr; /* Mobile-first stack */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
         }
 
         .card {
@@ -66,39 +64,34 @@
             border: 1px solid var(--border);
             border-radius: 15px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
         }
 
         .media-box {
             width: 100%;
-            height: auto;
-            min-height: 250px;
+            /* This ensures all boxes are the exact same height */
+            aspect-ratio: 4/5; 
             background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            max-height: 70vh; /* Prevents image from taking too much vertical space on mobile */
-            object-fit: contain; /* Shows the full image without cropping */
-            display: block;
+        /* Grid specific for videos to keep them widescreen */
+        .video-box {
+            aspect-ratio: 16/9;
         }
 
-        video {
+        img, video {
             width: 100%;
-            height: auto;
+            height: 100%;
+            /* 'cover' fills the box; 'contain' shows the full image with bars */
+            object-fit: cover; 
             display: block;
         }
 
         .placeholder-text {
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -121,8 +114,8 @@
 
     <div class="container">
         
-        <section style="text-align: center; padding: 40px 0;">
-            <p style="font-style: italic; color: var(--text-dim); max-width: 600px; margin: 0 auto;">
+        <section style="text-align: center; padding: 30px 0;">
+            <p style="font-size: 0.9rem; color: var(--text-dim);">
                 "Fostering a culture of hands-on innovation in IoT, Embedded Systems, and VLSI."
             </p>
         </section>
@@ -131,13 +124,13 @@
         <div class="grid">
             <div class="card">
                 <div class="media-box">
-                    <img src="./img1.jpg" alt="Event Image">
+                    <img src="./img1.jpg" alt="Highlight 1">
                 </div>
             </div>
 
             <div class="card">
                 <div class="media-box">
-                    <span class="placeholder-text">Gallery Updating...</span>
+                    <img src="./img2.jpg" alt="Highlight 2">
                 </div>
             </div>
         </div>
@@ -145,17 +138,16 @@
         <h2 class="section-title">Video Showcase</h2>
         <div class="grid">
             <div class="card">
-                <div class="media-box">
+                <div class="media-box video-box">
                     <video controls preload="metadata">
                         <source src="./vid1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
 
             <div class="card">
-                <div class="media-box">
-                    <span class="placeholder-text">More Content Coming Soon</span>
+                <div class="media-box video-box">
+                    <span class="placeholder-text">Next Highlight Coming Soon</span>
                 </div>
             </div>
         </div>
