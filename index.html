@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synaptics 2K25 | Official</title>
+    <title>Synaptics 2K25 | Official Gallery</title>
     <style>
         :root {
             --primary: #020617;
-            --secondary: #0f172a;
             --accent: #38bdf8;
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
@@ -24,35 +23,35 @@
         }
 
         header {
-            min-height: 25vh;
+            min-height: 20vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background: linear-gradient(to bottom, #0f172a, #020617);
         }
 
         .logo-text {
-            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-size: clamp(2rem, 8vw, 3rem);
             font-weight: 900;
             background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px 60px; }
 
         .section-title {
             margin: 40px 0 20px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             border-left: 4px solid var(--accent);
             padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Responsive Grid: Stacks on mobile, side-by-side on tablet/desktop */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -62,38 +61,26 @@
         .card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .media-box {
             width: 100%;
-            /* This ensures all boxes are the exact same height */
-            aspect-ratio: 4/5; 
+            position: relative;
             background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Grid specific for videos to keep them widescreen */
-        .video-box {
-            aspect-ratio: 16/9;
-        }
+        /* Fixed aspect ratio for perfect alignment on mobile */
+        .img-box { aspect-ratio: 4/5; }
+        .vid-box { aspect-ratio: 16/9; }
 
         img, video {
             width: 100%;
             height: 100%;
-            /* 'cover' fills the box; 'contain' shows the full image with bars */
-            object-fit: cover; 
+            object-fit: cover; /* This fixes the image adjustment issue */
             display: block;
-        }
-
-        .placeholder-text {
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         footer {
@@ -109,28 +96,21 @@
 
     <header>
         <div class="logo-text">Synaptics 2K25</div>
-        <p style="color: var(--text-dim)">JNTUH UCES | ECE Retrospective</p>
+        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 10px;">JNTUH UCES | ECE Department Retrospective</p>
     </header>
 
     <div class="container">
         
-        <section style="text-align: center; padding: 30px 0;">
-            <p style="font-size: 0.9rem; color: var(--text-dim);">
-                "Fostering a culture of hands-on innovation in IoT, Embedded Systems, and VLSI."
-            </p>
-        </section>
-
-        <h2 class="section-title">Event Highlights</h2>
+        <h2 class="section-title">Event Photos</h2>
         <div class="grid">
             <div class="card">
-                <div class="media-box">
-                    <img src="./img1.jpg" alt="Highlight 1">
+                <div class="media-box img-box">
+                    <img src="./img1.jpg">
                 </div>
             </div>
-
             <div class="card">
-                <div class="media-box">
-                    <img src="./img2.jpg" alt="Highlight 2">
+                <div class="media-box img-box">
+                    <img src="./img2.jpg">
                 </div>
             </div>
         </div>
@@ -138,7 +118,7 @@
         <h2 class="section-title">Video Showcase</h2>
         <div class="grid">
             <div class="card">
-                <div class="media-box video-box">
+                <div class="media-box vid-box">
                     <video controls preload="metadata">
                         <source src="./vid1.mp4" type="video/mp4">
                     </video>
@@ -146,15 +126,18 @@
             </div>
 
             <div class="card">
-                <div class="media-box video-box">
-                    <span class="placeholder-text">Next Highlight Coming Soon</span>
+                <div class="media-box vid-box">
+                    <video controls preload="metadata">
+                        <source src="./vid2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
+
     </div>
 
     <footer>
-        <p><strong>Department of ECE</strong></p>
+        <p><strong>Department of Electronics and Communication Engineering</strong></p>
         <p>JNTUH University College of Engineering Sultanpur</p>
     </footer>
 
