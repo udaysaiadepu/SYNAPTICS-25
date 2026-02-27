@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synaptics 2K25 | JNTUH UCES Official</title>
+    <title>Synaptics 2K25 | Official</title>
     <style>
-        /* CSS VARIABLES & THEME */
         :root {
             --primary: #020617;
             --secondary: #0f172a;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.3);
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
-            --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
 
         body {
             background-color: var(--primary);
@@ -32,74 +24,48 @@
         }
 
         header {
-            min-height: 60vh;
+            min-height: 30vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 20px;
-            background: radial-gradient(circle at top right, var(--accent-glow), transparent),
-                        linear-gradient(to bottom, rgba(2, 6, 23, 0.9), var(--primary));
+            background: linear-gradient(to bottom, #0f172a, #020617);
         }
 
         .logo-text {
-            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-size: clamp(2rem, 8vw, 3.5rem);
             font-weight: 900;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+            background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
         }
 
-        .tagline {
-            font-size: clamp(1rem, 4vw, 1.25rem);
-            color: var(--text-dim);
-            max-width: 700px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 80px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
 
         .section-title {
-            margin: 60px 0 30px;
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .section-title::after {
-            content: "";
-            height: 2px;
-            background: var(--accent);
-            flex-grow: 1;
-            opacity: 0.2;
+            margin: 40px 0 20px;
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .card {
-            background: var(--glass);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         .media-box {
@@ -112,34 +78,22 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        .mission-box {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, var(--secondary), transparent);
-            border-radius: 30px;
-            margin: 40px 0;
-        }
-
-        .mission-text {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            font-style: italic;
-            color: var(--text-main);
-            max-width: 800px;
-            margin: 0 auto;
+        .placeholder-text {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         footer {
-            padding: 60px 20px;
-            border-top: 1px solid var(--border);
+            padding: 40px;
             text-align: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
             color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -147,56 +101,44 @@
 
     <header>
         <div class="logo-text">Synaptics 2K25</div>
-        <p class="tagline">Official Retrospective | Department of ECE, JNTUH UCES</p>
+        <p style="color: var(--text-dim)">JNTUH UCES | ECE Retrospective</p>
     </header>
 
     <div class="container">
-        
-        <section class="mission-box">
-            <p class="mission-text">
-                "Fostering a culture of hands-on innovation in IoT, Embedded Systems, and VLSI."
-            </p>
-        </section>
-
         <h2 class="section-title">Event Highlights</h2>
         <div class="grid">
-            <div class="card"><div class="media-box"><img src="img1" alt="Highlight 1"></div></div>
-            <div class="card"><div class="media-box"><img src="img2" alt="Highlight 2"></div></div>
-            <div class="card"><div class="media-box"><img src="img3" alt="Highlight 3"></div></div>
-            <div class="card"><div class="media-box"><img src="img4" alt="Highlight 4"></div></div>
+            <div class="card">
+                <div class="media-box"><img src="./img1.jpg"></div>
+            </div>
 
-            <div class="card"><div class="media-box"><video controls><source src="vid1" type="video/mp4"></video></div></div>
-            <div class="card"><div class="media-box"><video controls><source src="vid2" type="video/mp4"></video></div></div>
-            <div class="card"><div class="media-box"><video controls><source src="vid3" type="video/mp4"></video></div></div>
-            <div class="card"><div class="media-box"><video controls><source src="vid4" type="video/mp4"></video></div></div>
+            <div class="card">
+                <div class="media-box" style="display:flex; align-items:center; justify-content:center;">
+                    <span class="placeholder-text">Gallery Updating...</span>
+                </div>
+            </div>
         </div>
 
+        <h2 class="section-title">Video Showcase</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="media-box">
+                    <video controls preload="metadata">
+                        <source src="./vid1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="media-box" style="display:flex; align-items:center; justify-content:center;">
+                    <span class="placeholder-text">More Content Coming Soon</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p><strong>Synaptics 2K25</strong></p>
-        <p>JNTUH University College of Engineering Sultanpur</p>
+        <p>Department of ECE | JNTUH University College of Engineering Sultanpur</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.card');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
-                    }
-                });
-            });
-
-            items.forEach(item => {
-                item.style.opacity = "0";
-                item.style.transform = "translateY(30px)";
-                item.style.transition = "all 0.6s ease-out";
-                observer.observe(item);
-            });
-        });
-    </script>
 </body>
 </html>
