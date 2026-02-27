@@ -53,8 +53,12 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr; /* Mobile-first stack */
             gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
         }
 
         .card {
@@ -70,14 +74,25 @@
 
         .media-box {
             width: 100%;
-            aspect-ratio: 16/9;
+            height: auto;
+            min-height: 250px;
             background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        img, video {
+        img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            max-height: 70vh; /* Prevents image from taking too much vertical space on mobile */
+            object-fit: contain; /* Shows the full image without cropping */
+            display: block;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
@@ -105,14 +120,23 @@
     </header>
 
     <div class="container">
+        
+        <section style="text-align: center; padding: 40px 0;">
+            <p style="font-style: italic; color: var(--text-dim); max-width: 600px; margin: 0 auto;">
+                "Fostering a culture of hands-on innovation in IoT, Embedded Systems, and VLSI."
+            </p>
+        </section>
+
         <h2 class="section-title">Event Highlights</h2>
         <div class="grid">
             <div class="card">
-                <div class="media-box"><img src="./img1.jpg"></div>
+                <div class="media-box">
+                    <img src="./img1.jpg" alt="Event Image">
+                </div>
             </div>
 
             <div class="card">
-                <div class="media-box" style="display:flex; align-items:center; justify-content:center;">
+                <div class="media-box">
                     <span class="placeholder-text">Gallery Updating...</span>
                 </div>
             </div>
@@ -124,12 +148,13 @@
                 <div class="media-box">
                     <video controls preload="metadata">
                         <source src="./vid1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
 
             <div class="card">
-                <div class="media-box" style="display:flex; align-items:center; justify-content:center;">
+                <div class="media-box">
                     <span class="placeholder-text">More Content Coming Soon</span>
                 </div>
             </div>
@@ -137,7 +162,8 @@
     </div>
 
     <footer>
-        <p>Department of ECE | JNTUH University College of Engineering Sultanpur</p>
+        <p><strong>Department of ECE</strong></p>
+        <p>JNTUH University College of Engineering Sultanpur</p>
     </footer>
 
 </body>
